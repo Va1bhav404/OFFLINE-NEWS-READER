@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Offline News Reader</title>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <div class="badge">ON</div>
+      <div>
+        <h1>Offline News Reader</h1>
+        <p>PWA • Service Worker • IndexedDB • Offline-first</p>
+      </div>
+    </div>
+
+    <div class="head-controls">
+      <div class="status">
+        <div class="status-dot"></div> Online
+      </div>
+      <button class="btn">🔄 Sync</button>
+      <button class="btn btn-toggle-theme" id="themeToggle">🌙</button>
+    </div>
+  </header>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active">All Articles</div>
+    <div class="tab">Reading Queue</div>
+    <div class="tab">Search</div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <input type="text" placeholder="Search titles or snippets…" />
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <div class="card-top" style="background:#6366f1">AI Search</div>
+      <div class="card-bottom">
+        <div class="card-title">New Breakthrough in AI-Powered Search</div>
+        <div class="card-snippet">
+          A new engine understands queries better than ever…
+        </div>
+        <div class="meta-row">
+          <span>Tech</span>
+          <span class="badge-fresh">Fresh</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <div class="card-top" style="background:#8b5cf6">Mars Rover</div>
+      <div class="card-bottom">
+        <div class="card-title">Mars Rover Finds Organic Molecules</div>
+        <div class="card-snippet">Scientists reveal unexpected traces…</div>
+        <div class="meta-row">
+          <span>Science</span>
+          <span class="badge-stale">Stale</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <div class="card-top" style="background:#06b6d4">Offline Apps</div>
+      <div class="card-bottom">
+        <div class="card-title">The Rise of Offline-First Web Apps</div>
+        <div class="card-snippet">PWAs give native-like offline UX…</div>
+        <div class="meta-row">
+          <span>Web Dev</span>
+          <span class="badge-fresh">Fresh</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <div class="card-top" style="background:#f97316">Cache</div>
+      <div class="card-bottom">
+        <div class="card-title">Cache Invalidation Explained</div>
+        <div class="card-snippet">
+          TTL, reconciliation, stale-while-revalidate…
+        </div>
+        <div class="meta-row">
+          <span>Systems</span>
+          <span class="badge-stale">Stale</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+      <div class="card-top" style="background:#10b981">Solar</div>
+      <div class="card-bottom">
+        <div class="card-title">Largest Solar Plant Goes Online</div>
+        <div class="card-snippet">The Sahara megaproject lights millions…</div>
+        <div class="meta-row">
+          <span>Energy</span>
+          <span class="badge-fresh">Fresh</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card">
+      <div class="card-top" style="background:#ef4444">Environment</div>
+      <div class="card-bottom">
+        <div class="card-title">Capital Records Early Winter Chill</div>
+        <div class="card-snippet">AQI remains poor as temps fall…</div>
+        <div class="meta-row">
+          <span>Environment</span>
+          <span class="badge-stale">Stale</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DARK MODE JS -->
+<script>
+const toggle = document.getElementById("themeToggle");
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
+</script>
+
+</body>
+</html>
