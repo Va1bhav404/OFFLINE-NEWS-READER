@@ -118,6 +118,11 @@ header p {
   font-weight: 600;
 }
 
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .btn-toggle-theme {
   width: 44px;
   height: 44px;
