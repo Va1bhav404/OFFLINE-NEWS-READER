@@ -601,6 +601,8 @@ async function fetchNews() {
             updateStatus('online');
 
             // STEP 3: Background caching - images only (articles already have full body!)
+            // Disable refresh during caching to prevent glitches
+            document.getElementById('refreshBtn').disabled = true;
             cacheArticlesInBackground(transformedArticles, batchId, transformedArticles.length);
 
         } else {
@@ -710,6 +712,9 @@ async function cacheArticlesInBackground(articles, batchId, total) {
     // Show actual counts from database
     showNotification(`✓ Offline: ${actualImagesCached} images, ${actualArticlesCached} articles cached!`);
     console.log(`Background caching complete - Verified: ${actualImagesCached} images, ${actualArticlesCached} articles in database`);
+
+    // Re-enable refresh button after caching complete
+    document.getElementById('refreshBtn').disabled = false;
 }
 
 // Cleanup old articles to make room for new ones

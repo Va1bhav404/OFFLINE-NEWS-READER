@@ -1,5 +1,5 @@
 // Service Worker for Offline News Reader
-const CACHE_NAME = 'offline-news-v30'; // Fixed fallback to handle empty image strings
+const CACHE_NAME = 'offline-news-v31'; // Disabled refresh during caching
 const STATIC_ASSETS = [
     './',
     './index.html',
