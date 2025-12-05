@@ -547,7 +547,9 @@ async function fetchNews() {
                 articlesCount: 10,
                 lang: 'eng',
                 includeArticleBody: true,
-                includeArticleImage: true
+                includeArticleImage: true,
+                // Random keyword for variety (empty string = random articles)
+                keyword: ['tech', 'business', 'sports', 'science', 'world', ''][Math.floor(Math.random() * 6)]
             }),
             signal: controller.signal
         });
