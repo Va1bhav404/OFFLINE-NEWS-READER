@@ -83,13 +83,13 @@ async function createArticleCard(article) {
         // Cached base64 - always works instantly
         cardTopStyle = `background-image: url('${article.cachedImage}'); background-size: cover; background-position: center;`;
         cardTopContent = '';
-    } else if (article.image) {
+    } else if (article.image && article.image.trim()) {
         // Try loading URL image - colored fallback visible behind if it fails
-        cardTopStyle = `background: ${color}; color: white; font-size: 32px; font-weight: 700;`;
+        cardTopStyle = `background: ${color}; color: white; font-size: 32px; font-weight: 700; display: flex; align-items: center; justify-content: center;`;
         cardTopContent = `<img src="${article.image}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:1;" onerror="this.style.display='none'" /><span style="position:relative;z-index:0;">${cardTopText}</span>`;
     } else {
         // No image at all - colored background with keyword
-        cardTopStyle = `background: ${color}; color: white; font-size: 32px; font-weight: 700;`;
+        cardTopStyle = `background: ${color}; color: white; font-size: 32px; font-weight: 700; display: flex; align-items: center; justify-content: center;`;
         cardTopContent = cardTopText;
     }
 
